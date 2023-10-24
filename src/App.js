@@ -18,10 +18,12 @@ import { useState } from "react";
 const App = () => {
   // Gönderi nesneleri dizisini tutmak için "gonderiler" adlı bir state oluşturun, **sahteVeri'yi yükleyin**.
   const [gonderiler, setGonderiler] = useState(sahteVeri);
+
   // gonderiler artık sahte veri arrayini tutuyor
   // Artık sahteVeri'ye ihtiyacınız olmayacak.
+
   // Arama çubuğunun çalışması için , arama kriterini tutacak başka bir state'e ihtiyacımız olacak.
-  const [arama, setArama] = useState();
+  const [arama, setArama] = useState("");
 
   const gonderiyiBegen = (gonderiID) => {
     /*
@@ -35,13 +37,25 @@ const App = () => {
         - gönderinin idsi "gonderiID" ile eşleşirse, istenen değerlerle yeni bir gönderi nesnesi döndürün.
         - aksi takdirde, sadece gönderi nesnesini değiştirmeden döndürün.
      */
+    const gonderiEsle = gonderiler.map((gonderi) => {
+      if (gonderi.id == gonderiID) {
+        return gonderi.likes + 1;
+      }
+      return gonderi;
+    });
+
+    setGonderiler(gonderiEsle);
   };
 
   return (
     <div className="App">
       App Çalışıyor
+      {/* gönderiler prop olarak gönderiler.js e yollanacak */}
+      {/* arama çubuğu ve gönderiler olacka  */}
       {/* Yukarıdaki metni projeye başladığınızda silin*/}
       {/* AramaÇubuğu ve Gönderiler'i render etmesi için buraya ekleyin */}
+      <AramaCubugu arama={arama} setArama={setArama} />
+      <Gonderiler gonderiler={gonderiler} gonderiyiBegen={gonderiyiBegen} />
       {/* Her bileşenin hangi proplara ihtiyaç duyduğunu kontrol edin, eğer ihtiyaç varsa ekleyin! */}
     </div>
   );

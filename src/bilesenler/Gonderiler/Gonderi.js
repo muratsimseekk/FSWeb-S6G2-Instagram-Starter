@@ -6,7 +6,7 @@ import GonderiBasligi from "./GonderiBasligi";
 const Gonderi = (props) => {
   // 🔥 Bu bileşenin parentının aşağıdaki propları düzgün gönderdiğinden emin olun.
   const { gonderi, gonderiyiBegen } = props;
-
+  console.log(gonderi);
   return (
     <div className="post-border">
       <GonderiBasligi
