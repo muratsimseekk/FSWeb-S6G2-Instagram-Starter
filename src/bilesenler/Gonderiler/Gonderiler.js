@@ -11,7 +11,7 @@ const Gonderiler = (props) => {
     <div className="posts-container-wrapper">
       {gonderiler.map((element) => (
         <Gonderi
-          // key={element.id}
+          key={element.id}
           gonderi={element}
           gonderiyiBegen={gonderiyiBegen}
         />
