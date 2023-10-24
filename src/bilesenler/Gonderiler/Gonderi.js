@@ -6,7 +6,7 @@ import GonderiBasligi from "./GonderiBasligi";
 const Gonderi = (props) => {
   // 🔥 Bu bileşenin parentının aşağıdaki propları düzgün gönderdiğinden emin olun.
   const { gonderi, gonderiyiBegen } = props;
-  // console.log(gonderi);
+  console.log(gonderi.comments);
 
   return (
     <div className="post-border">
@@ -28,7 +28,7 @@ const Gonderi = (props) => {
         begeniSayisi={gonderi.likes}
       />
       {/* Yorumlar da proplara dikkat istiyor! */}
-      <Yorumlar />
+      <Yorumlar yorumlar={gonderi.comments} />
     </div>
   );
 };
