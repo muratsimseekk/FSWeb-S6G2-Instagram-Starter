@@ -19,6 +19,7 @@ const App = () => {
   // Gönderi nesneleri dizisini tutmak için "gonderiler" adlı bir state oluşturun, **sahteVeri'yi yükleyin**.
   const [gonderiler, setGonderiler] = useState(sahteVeri);
 
+  console.log(gonderiler);
   // gonderiler artık sahte veri arrayini tutuyor
   // Artık sahteVeri'ye ihtiyacınız olmayacak.
 
@@ -37,14 +38,13 @@ const App = () => {
         - gönderinin idsi "gonderiID" ile eşleşirse, istenen değerlerle yeni bir gönderi nesnesi döndürün.
         - aksi takdirde, sadece gönderi nesnesini değiştirmeden döndürün.
      */
-    const gonderiEsle = gonderiler.map((gonderi) => {
-      if (gonderi.id == gonderiID) {
-        return gonderi.likes + 1;
-      }
-      return gonderi;
-    });
-
-    setGonderiler(gonderiEsle);
+    // const gonderiEsle = gonderiler.map((gonderi) => {
+    //   if (gonderi.id == gonderiID) {
+    //     return {gonderi.likes + 1};
+    //   }
+    //   return gonderi;
+    // });
+    // setGonderiler(gonderiEsle);
   };
 
   return (
