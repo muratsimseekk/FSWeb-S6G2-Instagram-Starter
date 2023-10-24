@@ -1,5 +1,5 @@
 import React from "react";
-import Yorumlar from "../Yorumlar/Yorumlar";
+import Yorumlar from "./Yorumlar/Yorumlar";
 import BegenBolumu from "./BegenBolumu";
 import GonderiBasligi from "./GonderiBasligi";
 
